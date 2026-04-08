@@ -22,7 +22,7 @@ app.get('/auth/google',
 )
 
 app.get("/auth/google/callback",
-    passport.authenticate("google",{failureRedirect:'/'}),
+    passport.authenticate("google",{failureRedirect:'/',session:false}),
     (req,res)=>{
         console.log(req.user);
         res.send("google authenticate successfully");
